@@ -796,8 +796,8 @@ namespace Parcial_HClinica
             string strCadenaConexion;
             string strComandoSQL;
 
-            //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             conn = new SqlConnection(strCadenaConexion);
 
             try
@@ -923,8 +923,8 @@ namespace Parcial_HClinica
             SqlConnection conn;
             SqlCommand cmd;
             string strComandoSQL;
-            //string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             strComandoSQL = "sp_pacienteRead";
             conn = new SqlConnection(strCadenaConexion);
 

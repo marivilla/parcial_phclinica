@@ -19,3 +19,12 @@ C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClini
 C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.csproj.GenerateResource.Cache
 C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe
 C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\bin\Debug\Parcial_HClinica.pdb
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe.config
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.exe
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.pdb
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\bin\Debug\Parcial_HClinica.pdb
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.csprojResolveAssemblyReference.cache
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.Form1.resources
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.Properties.Resources.resources
+C:\Users\Dulcinea\Source\Repos\parcial_phclinica3\Parcial_HClinica\obj\Debug\Parcial_HClinica.csproj.GenerateResource.Cache
