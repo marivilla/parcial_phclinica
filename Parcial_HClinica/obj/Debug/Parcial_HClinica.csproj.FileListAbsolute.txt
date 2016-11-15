@@ -1,0 +1,21 @@
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe.config
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\bin\Debug\Parcial_HClinica.pdb
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.csprojResolveAssemblyReference.cache
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.Form1.resources
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.Properties.Resources.resources
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.csproj.GenerateResource.Cache
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.exe
+D:\Facu\Practica profesionales 3\Parcial_HClinica\Parcial_HClinica\obj\Debug\Parcial_HClinica.pdb
+F:\Parcial pp3\Parcial_HClinica11-Combobox\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe.config
+F:\Parcial pp3\Parcial_HClinica11-Combobox\Parcial_HClinica\obj\Debug\Parcial_HClinica.exe
+F:\Parcial pp3\Parcial_HClinica11-Combobox\Parcial_HClinica\obj\Debug\Parcial_HClinica.pdb
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe.config
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.exe
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.pdb
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.csprojResolveAssemblyReference.cache
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.Form1.resources
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.Properties.Resources.resources
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\obj\Debug\Parcial_HClinica.csproj.GenerateResource.Cache
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\bin\Debug\Parcial_HClinica.exe
+C:\Users\Villa\Documents\Visual Studio 2015\Projects\ParcialSoria\Parcial_HClinica14\Parcial_HClinica\bin\Debug\Parcial_HClinica.pdb
