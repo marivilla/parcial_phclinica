@@ -40,8 +40,8 @@ namespace Parcial_HClinica
             SqlConnection conn;
             SqlCommand cmd;
             string strComandoSQL;
-            //string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
 
             strComandoSQL = "sp_pacienteRead";
             conn = new SqlConnection(strCadenaConexion);
@@ -99,8 +99,8 @@ namespace Parcial_HClinica
             SqlConnection conn;
             SqlCommand cmd;
             string strComandoSQL;
-            //string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             strComandoSQL = "sp_medicoRead";
             conn = new SqlConnection(strCadenaConexion);
 
@@ -147,9 +147,9 @@ namespace Parcial_HClinica
             SqlConnection conn;
             SqlCommand cmd;
             string strComandoSQL;
-            //string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                        strComandoSQL = "sp_consultaRead";
+            string strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //string strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strComandoSQL = "sp_consultaRead";
             conn = new SqlConnection(strCadenaConexion);
 
             try
@@ -174,9 +174,7 @@ namespace Parcial_HClinica
                 da.Fill(dt);
                 dataGridConsulta.DataSource = dt;
 
-                idConsultaTextBox.Text = this.dataGridConsulta.CurrentRow.Cells[0].Value.ToString();
-                //idPacienteTextBoxConsulta.Text = this.dataGridConsulta.CurrentRow.Cells[1].Value.ToString();
-                //idMedicoTextBoxConsulta.Text = this.dataGridConsulta.CurrentRow.Cells[2].Value.ToString();
+                idConsultaTextBox.Text = this.dataGridConsulta.CurrentRow.Cells[0].Value.ToString();                
                 IDPacienteComboBoxConsulta.Text = this.dataGridConsulta.CurrentRow.Cells[1].Value.ToString();
                 IDMedicoComboBoxConsulta.Text = this.dataGridConsulta.CurrentRow.Cells[2].Value.ToString();
                 fechaConsultaDateTimePicker.Text = this.dataGridConsulta.CurrentRow.Cells[3].Value.ToString();
@@ -205,8 +203,8 @@ namespace Parcial_HClinica
             int nRegs;
 
             Llenado llenar = new Llenado();
-            //strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             strComandoSQL = "sp_pacienteRead";                        
             nRegs = llenar.RellenarLista(strConn, listViewListado, strComandoSQL);
         }
@@ -218,8 +216,8 @@ namespace Parcial_HClinica
             int nRegs;
 
             Llenado llenar = new Llenado();
-            //strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             strComandoSQL = "sp_medicoRead";
             nRegs = llenar.RellenarLista(strConn, listViewListado, strComandoSQL);
         }
@@ -231,8 +229,8 @@ namespace Parcial_HClinica
             int nRegs;
 
             Llenado llenar = new Llenado();
-            //strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strConn = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strConn = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             strComandoSQL = "sp_consultaRead";
             nRegs = llenar.RellenarLista(strConn, listViewListado, strComandoSQL);
         }
@@ -244,8 +242,8 @@ namespace Parcial_HClinica
             string strCadenaConexion;            
             int id = 0;
 
-            //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             conn = new SqlConnection(strCadenaConexion);
 
             try
@@ -334,8 +332,6 @@ namespace Parcial_HClinica
         private void btn_consultaBlanco_Click(object sender, EventArgs e)
         {          
             idConsultaTextBox.Clear();
-            //idPacienteTextBoxConsulta.Clear();
-            //idMedicoTextBoxConsulta.Clear();
             IDPacienteComboBoxConsulta.ResetText();
             IDMedicoComboBoxConsulta.ResetText();
             fechaConsultaDateTimePicker.ResetText();
@@ -351,9 +347,7 @@ namespace Parcial_HClinica
             btn_modificarConsulta.Enabled = false;
             btn_eliminarConsulta.Enabled = false;
             btn_altaConsulta.Enabled = true;
-
-            //idPacienteTextBoxConsulta.Enabled = true;
-            //idMedicoTextBoxConsulta.Enabled = true;
+            
             IDPacienteComboBoxConsulta.Enabled = true;
             IDMedicoComboBoxConsulta.Enabled = true;
             fechaConsultaDateTimePicker.Enabled = true;
@@ -377,8 +371,8 @@ namespace Parcial_HClinica
                 string strCadenaConexion;
                 string strComandoSQL;
 
-                //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
                 conn = new SqlConnection(strCadenaConexion);
 
                 try
@@ -473,8 +467,8 @@ namespace Parcial_HClinica
                 string strCadenaConexion;
                 string strComandoSQL;
 
-                //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
                 conn = new SqlConnection(strCadenaConexion);
 
                 try
@@ -542,8 +536,8 @@ namespace Parcial_HClinica
                 string strCadenaConexion;
                 string strComandoSQL;
 
-                //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
                 conn = new SqlConnection(strCadenaConexion);
 
                 try
@@ -563,8 +557,6 @@ namespace Parcial_HClinica
                 string strIDSQL = "select max(idConsulta)+1 from Consulta;";                
 
                 cmd.Parameters.Add("@idConsulta", SqlDbType.Int).Value = nuevoID(strIDSQL);
-                //cmd.Parameters.Add("@idPaciente", SqlDbType.Int).Value = Convert.ToInt16(idPacienteTextBoxConsulta.Text);
-                //cmd.Parameters.Add("@idMedico", SqlDbType.Int).Value = Convert.ToInt16(idMedicoTextBoxConsulta.Text);
                 cmd.Parameters.Add("@idPaciente", SqlDbType.Int).Value = Convert.ToInt16(IDPacienteComboBoxConsulta.Text);
                 cmd.Parameters.Add("@idMedico", SqlDbType.Int).Value = Convert.ToInt16(IDMedicoComboBoxConsulta.Text);
                 cmd.Parameters.Add("@fechaConsulta", SqlDbType.Date).Value = Convert.ToDateTime(fechaConsultaDateTimePicker.Text);
@@ -590,8 +582,6 @@ namespace Parcial_HClinica
                 }
                 conn.Close();
                 idConsultaTextBox.Clear();
-                //idPacienteTextBoxConsulta.Clear();
-                //idMedicoTextBoxConsulta.Clear();
                 IDPacienteComboBoxConsulta.ResetText();
                 IDMedicoComboBoxConsulta.ResetText();
                 fechaConsultaDateTimePicker.ResetText();
@@ -602,8 +592,6 @@ namespace Parcial_HClinica
                 tallaTextBox.Clear();
                 taTextBox.Clear();
                 btn_altaConsulta.Enabled = false;
-                //idPacienteTextBoxConsulta.Enabled = false;
-                //idMedicoTextBoxConsulta.Enabled = false;
                 IDPacienteComboBoxConsulta.Enabled = false;
                 IDMedicoComboBoxConsulta.Enabled = false;
                 fechaConsultaDateTimePicker.Enabled = false;
@@ -629,8 +617,8 @@ namespace Parcial_HClinica
                 string strCadenaConexion;
                 string strComandoSQL;
 
-                //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
                 conn = new SqlConnection(strCadenaConexion);
 
                 try
@@ -685,8 +673,8 @@ namespace Parcial_HClinica
                 string strCadenaConexion;
                 string strComandoSQL;
 
-                //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-                strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
                 conn = new SqlConnection(strCadenaConexion);
 
                 try
@@ -704,8 +692,6 @@ namespace Parcial_HClinica
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.Add("@idConsulta", SqlDbType.Int).Value = Convert.ToInt16(idConsultaTextBox.Text);
-                //cmd.Parameters.Add("@idPaciente", SqlDbType.Int).Value = Convert.ToInt16(idPacienteTextBoxConsulta.Text);
-                //cmd.Parameters.Add("@idMedico", SqlDbType.Int).Value = Convert.ToInt16(idMedicoTextBoxConsulta.Text);
                 cmd.Parameters.Add("@idPaciente", SqlDbType.Int).Value = Convert.ToInt16(IDPacienteComboBoxConsulta.Text);
                 cmd.Parameters.Add("@idMedico", SqlDbType.Int).Value = Convert.ToInt16(IDMedicoComboBoxConsulta.Text);
                 cmd.Parameters.Add("@fechaConsulta", SqlDbType.Date).Value = Convert.ToDateTime(fechaConsultaDateTimePicker.Text);
@@ -744,8 +730,8 @@ namespace Parcial_HClinica
             string strCadenaConexion;
             string strComandoSQL;
 
-            //strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
-            strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
             conn = new SqlConnection(strCadenaConexion);
 
             try
@@ -832,8 +818,6 @@ namespace Parcial_HClinica
             conn.Close();
 
             idConsultaTextBox.Clear();
-            //idPacienteTextBoxConsulta.Clear();
-            //idMedicoTextBoxConsulta.Clear();
             IDPacienteComboBoxConsulta.ResetText();
             IDMedicoComboBoxConsulta.ResetText();
             fechaConsultaDateTimePicker.ResetText();
@@ -843,8 +827,7 @@ namespace Parcial_HClinica
             pesoTextBox.Clear();
             tallaTextBox.Clear();
             taTextBox.Clear();
-            //idPacienteTextBoxConsulta.Enabled = false;
-            //idMedicoTextBoxConsulta.Enabled = false;
+
             IDPacienteComboBoxConsulta.Enabled = false;
             IDMedicoComboBoxConsulta.Enabled = false;
             fechaConsultaDateTimePicker.Enabled = false;
@@ -883,9 +866,7 @@ namespace Parcial_HClinica
             btn_modificarConsulta.Enabled = true;
             btn_eliminarConsulta.Enabled = true;
             btn_altaConsulta.Enabled = false;
-
-            //idPacienteTextBoxConsulta.Enabled = true;
-            //idMedicoTextBoxConsulta.Enabled = true;
+            
             IDPacienteComboBoxConsulta.Enabled = true;
             IDMedicoComboBoxConsulta.Enabled = true;
             fechaConsultaDateTimePicker.Enabled = true;
@@ -900,8 +881,6 @@ namespace Parcial_HClinica
             if (row.Index != null)
             {                                
                 idConsultaTextBox.Text = Convert.ToString(row.Cells[0].Value);
-                //idPacienteTextBoxConsulta.Text = row.Cells[1].Value.ToString();
-                //idMedicoTextBoxConsulta.Text = row.Cells[2].Value.ToString();
                 IDPacienteComboBoxConsulta.Text = row.Cells[1].Value.ToString();
                 IDMedicoComboBoxConsulta.Text = row.Cells[2].Value.ToString();
                 fechaConsultaDateTimePicker.Text = row.Cells[3].Value.ToString();
@@ -911,8 +890,6 @@ namespace Parcial_HClinica
                 pesoTextBox.Text = row.Cells[7].Value.ToString();
                 tallaTextBox.Text = row.Cells[8].Value.ToString();
                 taTextBox.Text = row.Cells[9].Value.ToString();
-                //idPacienteTextBoxConsulta.Enabled = false;
-                //idMedicoTextBoxConsulta.Enabled = false;
                 IDPacienteComboBoxConsulta.Enabled = false;
                 IDMedicoComboBoxConsulta.Enabled = false;
             }
@@ -998,8 +975,6 @@ namespace Parcial_HClinica
             pesoTextBox.Enabled = true;
             tallaTextBox.Enabled = true;
             taTextBox.Enabled = true;
-        }
-
-      
+        }      
     }
 }
