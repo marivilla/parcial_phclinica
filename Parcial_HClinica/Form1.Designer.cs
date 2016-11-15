@@ -60,9 +60,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dataGridPaciente = new System.Windows.Forms.DataGridView();
+            this.btn_llenarDataGridPaciente = new System.Windows.Forms.Button();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.btn_pacienteBlanco = new System.Windows.Forms.ToolStripButton();
+            this.btn_altaPaciente = new System.Windows.Forms.ToolStripButton();
             this.btn_modificarPaciente = new System.Windows.Forms.ToolStripButton();
+            this.btn_eliminarPaciente = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.idPacienteTextBox = new System.Windows.Forms.TextBox();
             this.estadoCivilTextBox = new System.Windows.Forms.TextBox();
@@ -118,10 +122,6 @@
             this.pacienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.btn_altaPaciente = new System.Windows.Forms.ToolStripButton();
-            this.btn_eliminarPaciente = new System.Windows.Forms.ToolStripButton();
-            this.btn_llenarDataGridPaciente = new System.Windows.Forms.Button();
-            this.dataGridPaciente = new System.Windows.Forms.DataGridView();
             dniLabel = new System.Windows.Forms.Label();
             apellidoSolteraLabel = new System.Windows.Forms.Label();
             nombresLabel = new System.Windows.Forms.Label();
@@ -152,6 +152,7 @@
             taLabel = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).BeginInit();
             this.toolStrip1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridMedico)).BeginInit();
@@ -161,7 +162,6 @@
             this.toolStrip3.SuspendLayout();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).BeginInit();
             this.SuspendLayout();
             // 
             // dniLabel
@@ -472,6 +472,28 @@
             this.tabPage1.Text = "Pacientes";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // dataGridPaciente
+            // 
+            this.dataGridPaciente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPaciente.Location = new System.Drawing.Point(384, 67);
+            this.dataGridPaciente.Name = "dataGridPaciente";
+            this.dataGridPaciente.ReadOnly = true;
+            this.dataGridPaciente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
+            this.dataGridPaciente.Size = new System.Drawing.Size(635, 360);
+            this.dataGridPaciente.TabIndex = 38;
+            this.dataGridPaciente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPaciente_CellClick);
+            // 
+            // btn_llenarDataGridPaciente
+            // 
+            this.btn_llenarDataGridPaciente.Location = new System.Drawing.Point(664, 34);
+            this.btn_llenarDataGridPaciente.Name = "btn_llenarDataGridPaciente";
+            this.btn_llenarDataGridPaciente.Size = new System.Drawing.Size(75, 23);
+            this.btn_llenarDataGridPaciente.TabIndex = 37;
+            this.btn_llenarDataGridPaciente.Text = "Llenar lista";
+            this.btn_llenarDataGridPaciente.UseVisualStyleBackColor = true;
+            this.btn_llenarDataGridPaciente.Click += new System.EventHandler(this.btn_llenarDataGridPaciente_Click);
+            // 
             // toolStrip1
             // 
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -496,6 +518,17 @@
             this.btn_pacienteBlanco.Text = "&New";
             this.btn_pacienteBlanco.Click += new System.EventHandler(this.btn_pacienteBlanco_Click);
             // 
+            // btn_altaPaciente
+            // 
+            this.btn_altaPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_altaPaciente.Enabled = false;
+            this.btn_altaPaciente.Image = ((System.Drawing.Image)(resources.GetObject("btn_altaPaciente.Image")));
+            this.btn_altaPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_altaPaciente.Name = "btn_altaPaciente";
+            this.btn_altaPaciente.Size = new System.Drawing.Size(23, 22);
+            this.btn_altaPaciente.Text = "Agregar nuevo";
+            this.btn_altaPaciente.Click += new System.EventHandler(this.btn_altaPaciente_Click);
+            // 
             // btn_modificarPaciente
             // 
             this.btn_modificarPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -505,6 +538,18 @@
             this.btn_modificarPaciente.Name = "btn_modificarPaciente";
             this.btn_modificarPaciente.Size = new System.Drawing.Size(23, 22);
             this.btn_modificarPaciente.Text = "&Save";
+            this.btn_modificarPaciente.Click += new System.EventHandler(this.btn_modificarPaciente_Click);
+            // 
+            // btn_eliminarPaciente
+            // 
+            this.btn_eliminarPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.btn_eliminarPaciente.Enabled = false;
+            this.btn_eliminarPaciente.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminarPaciente.Image")));
+            this.btn_eliminarPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.btn_eliminarPaciente.Name = "btn_eliminarPaciente";
+            this.btn_eliminarPaciente.Size = new System.Drawing.Size(23, 22);
+            this.btn_eliminarPaciente.Text = "Eliminar Registro";
+            this.btn_eliminarPaciente.Click += new System.EventHandler(this.btn_eliminarPaciente_Click);
             // 
             // toolStripSeparator
             // 
@@ -537,7 +582,7 @@
             // 
             this.alfabetaCheckBox.Location = new System.Drawing.Point(243, 316);
             this.alfabetaCheckBox.Name = "alfabetaCheckBox";
-            this.alfabetaCheckBox.Size = new System.Drawing.Size(104, 24);
+            this.alfabetaCheckBox.Size = new System.Drawing.Size(15, 24);
             this.alfabetaCheckBox.TabIndex = 23;
             this.alfabetaCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -566,14 +611,14 @@
             // 
             this.localidadTextBox.Location = new System.Drawing.Point(83, 240);
             this.localidadTextBox.Name = "localidadTextBox";
-            this.localidadTextBox.Size = new System.Drawing.Size(100, 20);
+            this.localidadTextBox.Size = new System.Drawing.Size(175, 20);
             this.localidadTextBox.TabIndex = 15;
             // 
             // domicilioTextBox
             // 
             this.domicilioTextBox.Location = new System.Drawing.Point(80, 208);
             this.domicilioTextBox.Name = "domicilioTextBox";
-            this.domicilioTextBox.Size = new System.Drawing.Size(100, 20);
+            this.domicilioTextBox.Size = new System.Drawing.Size(178, 20);
             this.domicilioTextBox.TabIndex = 13;
             // 
             // fechaNacimientoDateTimePicker
@@ -648,6 +693,7 @@
             this.dataGridMedico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridMedico.Location = new System.Drawing.Point(368, 67);
             this.dataGridMedico.Name = "dataGridMedico";
+            this.dataGridMedico.ReadOnly = true;
             this.dataGridMedico.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridMedico.Size = new System.Drawing.Size(635, 360);
             this.dataGridMedico.TabIndex = 35;
@@ -814,6 +860,7 @@
             this.dataGridConsulta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridConsulta.Location = new System.Drawing.Point(377, 58);
             this.dataGridConsulta.Name = "dataGridConsulta";
+            this.dataGridConsulta.ReadOnly = true;
             this.dataGridConsulta.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dataGridConsulta.Size = new System.Drawing.Size(635, 360);
             this.dataGridConsulta.TabIndex = 33;
@@ -1006,47 +1053,6 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "&New";
             // 
-            // btn_altaPaciente
-            // 
-            this.btn_altaPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_altaPaciente.Enabled = false;
-            this.btn_altaPaciente.Image = ((System.Drawing.Image)(resources.GetObject("btn_altaPaciente.Image")));
-            this.btn_altaPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_altaPaciente.Name = "btn_altaPaciente";
-            this.btn_altaPaciente.Size = new System.Drawing.Size(23, 22);
-            this.btn_altaPaciente.Text = "Agregar nuevo";
-            this.btn_altaPaciente.Click += new System.EventHandler(this.btn_altaPaciente_Click);
-            // 
-            // btn_eliminarPaciente
-            // 
-            this.btn_eliminarPaciente.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.btn_eliminarPaciente.Enabled = false;
-            this.btn_eliminarPaciente.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminarPaciente.Image")));
-            this.btn_eliminarPaciente.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.btn_eliminarPaciente.Name = "btn_eliminarPaciente";
-            this.btn_eliminarPaciente.Size = new System.Drawing.Size(23, 22);
-            this.btn_eliminarPaciente.Text = "Eliminar Registro";
-            // 
-            // btn_llenarDataGridPaciente
-            // 
-            this.btn_llenarDataGridPaciente.Location = new System.Drawing.Point(664, 34);
-            this.btn_llenarDataGridPaciente.Name = "btn_llenarDataGridPaciente";
-            this.btn_llenarDataGridPaciente.Size = new System.Drawing.Size(75, 23);
-            this.btn_llenarDataGridPaciente.TabIndex = 37;
-            this.btn_llenarDataGridPaciente.Text = "Llenar lista";
-            this.btn_llenarDataGridPaciente.UseVisualStyleBackColor = true;
-            this.btn_llenarDataGridPaciente.Click += new System.EventHandler(this.btn_llenarDataGridPaciente_Click);
-            // 
-            // dataGridPaciente
-            // 
-            this.dataGridPaciente.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridPaciente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPaciente.Location = new System.Drawing.Point(384, 67);
-            this.dataGridPaciente.Name = "dataGridPaciente";
-            this.dataGridPaciente.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
-            this.dataGridPaciente.Size = new System.Drawing.Size(635, 360);
-            this.dataGridPaciente.TabIndex = 38;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1059,6 +1065,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).EndInit();
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -1073,7 +1080,6 @@
             this.toolStrip3.PerformLayout();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pacienteBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPaciente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1112,7 +1118,6 @@
         private System.Windows.Forms.TextBox referenciaTextBox;
         private System.Windows.Forms.DateTimePicker fechaConsultaDateTimePicker;
         private System.Windows.Forms.TextBox idConsultaTextBox;
-        private object bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton btn_pacienteBlanco;
         private System.Windows.Forms.ToolStripButton btn_modificarPaciente;

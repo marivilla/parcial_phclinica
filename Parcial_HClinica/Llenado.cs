@@ -111,8 +111,8 @@ namespace Parcial_HClinica
             SqlCommand cmd;
             SqlDataReader dr;
 
-            //conn = new SqlConnection(@"Data Source = TAMARA\SQLEXPRESS; Initial Catalog = Hospital_Ginecologia; Integrated Security = True");
-            conn = new SqlConnection(@"Data Source = BGH\SQLEXPRESS; Initial Catalog = Hospital_Ginecologia; Integrated Security = True");
+            conn = new SqlConnection(@"Data Source = TAMARA\SQLEXPRESS; Initial Catalog = Hospital_Ginecologia; Integrated Security = True");
+            //conn = new SqlConnection(@"Data Source = BGH\SQLEXPRESS; Initial Catalog = Hospital_Ginecologia; Integrated Security = True");
             try
             {                
                 conn.Open();

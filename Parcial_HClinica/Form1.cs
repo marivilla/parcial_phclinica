@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace Parcial_HClinica
 {
     public partial class Form1 : Form
-    {
+    {       
         public Form1()
         {
             InitializeComponent();            
@@ -385,7 +385,7 @@ namespace Parcial_HClinica
                     return;
                 }
 
-                strComandoSQL = "sp_pacienteInsert";
+                strComandoSQL = "sp_pacienteCreate";
 
                 cmd = new SqlCommand(strComandoSQL, conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -402,7 +402,7 @@ namespace Parcial_HClinica
                 cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = telefonoTextBox.Text;
                 cmd.Parameters.Add("@ocupacion", SqlDbType.VarChar).Value = ocupacionTextBox.Text;
                 cmd.Parameters.Add("@obraSocial", SqlDbType.VarChar).Value = obraSocialTextBox.Text;
-                cmd.Parameters.Add("@alfabeta", SqlDbType.Bit).Value = Convert.ToBoolean(alfabetaCheckBox.Text); //ERROR
+                cmd.Parameters.Add("@alfabeta", SqlDbType.Bit).Value = Convert.ToBoolean(alfabetaCheckBox.Checked);
                 cmd.Parameters.Add("@estudios", SqlDbType.VarChar).Value = estudiosTextBox.Text;
                 cmd.Parameters.Add("@estadoCivil", SqlDbType.VarChar).Value = estadoCivilTextBox.Text;
 
@@ -496,7 +496,7 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Registro agregado.");
-                    if (dataGridPaciente.Rows.Count > 0)
+                    if (dataGridMedico.Rows.Count > 0)
                     {
                         RellenarDataGridMedico();
                     }                    
@@ -571,7 +571,7 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Registro agregado.");
-                    if (dataGridPaciente.Rows.Count > 0)
+                    if (dataGridConsulta.Rows.Count > 0)
                     {
                         RellenarDataGridConsulta();
                     }                    
@@ -601,6 +601,70 @@ namespace Parcial_HClinica
                 pesoTextBox.Enabled = false;
                 tallaTextBox.Enabled = false;
                 taTextBox.Enabled = false;
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben estar completos.");
+            }
+        }
+
+        private void btn_modificarPaciente_Click(object sender, EventArgs e)
+        {
+            if (dniTextBox.Text != "" && apellidoSolteraTextBox.Text != "" && nombresTextBox.Text != "" && nacionalidadTextBox.Text != ""
+                && fechaNacimientoDateTimePicker.Text != "" && domicilioTextBox.Text != "" && localidadTextBox.Text != "" && telefonoTextBox.Text != ""
+                && ocupacionTextBox.Text != "" && obraSocialTextBox.Text != "" && estudiosTextBox.Text != "" && estadoCivilTextBox.Text != "")
+            {
+                SqlConnection conn;
+                SqlCommand cmd;
+                string strCadenaConexion;
+                string strComandoSQL;
+
+                strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+                conn = new SqlConnection(strCadenaConexion);
+
+                try
+                {
+                    conn.Open();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message, "Error al conectar");
+                    return;
+                }
+
+                strComandoSQL = "sp_pacienteUpdate";
+                cmd = new SqlCommand(strComandoSQL, conn);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add("@idPaciente", SqlDbType.Int).Value = Convert.ToInt32(idPacienteTextBox.Text);
+                cmd.Parameters.Add("@dni", SqlDbType.VarChar).Value = dniTextBox.Text;
+                cmd.Parameters.Add("@apellidoSoltera", SqlDbType.VarChar).Value = apellidoSolteraTextBox.Text;
+                cmd.Parameters.Add("@nombres", SqlDbType.VarChar).Value = nombresTextBox.Text;
+                cmd.Parameters.Add("@nacionalidad", SqlDbType.VarChar).Value = nacionalidadTextBox.Text;
+                cmd.Parameters.Add("@fechaNacimiento", SqlDbType.Date).Value = Convert.ToDateTime(fechaNacimientoDateTimePicker.Text);
+                cmd.Parameters.Add("@domicilio", SqlDbType.VarChar).Value = domicilioTextBox.Text;
+                cmd.Parameters.Add("@localidad", SqlDbType.VarChar).Value = localidadTextBox.Text;
+                cmd.Parameters.Add("@telefono", SqlDbType.VarChar).Value = telefonoTextBox.Text;
+                cmd.Parameters.Add("@ocupacion", SqlDbType.VarChar).Value = ocupacionTextBox.Text;
+                cmd.Parameters.Add("@obraSocial", SqlDbType.VarChar).Value = obraSocialTextBox.Text;
+                cmd.Parameters.Add("@alfabeta", SqlDbType.Bit).Value = Convert.ToBoolean(alfabetaCheckBox.Checked);
+                cmd.Parameters.Add("@estudios", SqlDbType.VarChar).Value = estudiosTextBox.Text;
+                cmd.Parameters.Add("@estadoCivil", SqlDbType.VarChar).Value = estadoCivilTextBox.Text;
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Paciente Modificado.");
+                    if (dataGridPaciente.Rows.Count > 0)
+                    {
+                        RellenarDataGridPaciente();
+                    }
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                conn.Close();
             }
             else
             {
@@ -644,7 +708,7 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Registro del médico modificado.");
-                    if (dataGridPaciente.Rows.Count > 0)
+                    if (dataGridMedico.Rows.Count > 0)
                     {
                         RellenarDataGridMedico();
                     }                    
@@ -706,7 +770,7 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Consulta Modificada");
-                    if (dataGridPaciente.Rows.Count > 0)
+                    if (dataGridConsulta.Rows.Count > 0)
                     {
                         RellenarDataGridConsulta();
                     }                    
@@ -721,6 +785,81 @@ namespace Parcial_HClinica
             {
                 MessageBox.Show("Todos los campos deben estar completos.");
             }            
+        }
+
+        private void btn_eliminarPaciente_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn;
+            SqlCommand cmd;
+            string strCadenaConexion;
+            string strComandoSQL;
+
+            strCadenaConexion = @"Data Source=TAMARA\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            //strCadenaConexion = @"Data Source=BGH\SQLEXPRESS;Initial Catalog=Hospital_Ginecologia;Integrated Security=True";
+            conn = new SqlConnection(strCadenaConexion);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message, "Error al conectar");
+                return;
+            }
+
+            strComandoSQL = "sp_pacienteDelete";
+            cmd = new SqlCommand(strComandoSQL, conn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            cmd.Parameters.Add("@Original_idPaciente", SqlDbType.Int).Value = Convert.ToInt16(idPacienteTextBox.Text);
+
+            try
+            {
+                if (MessageBox.Show("¿Está seguro que desea eliminar el registro?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Consulta Eliminada");
+                    if (dataGridPaciente.Rows.Count > 0)
+                    {
+                        RellenarDataGridPaciente();
+                    }                    
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            conn.Close();
+
+            idPacienteTextBox.Clear();
+            dniTextBox.Clear();
+            apellidoSolteraTextBox.Clear();
+            nombresTextBox.Clear();
+            nacionalidadTextBox.Clear();
+            fechaNacimientoDateTimePicker.ResetText();
+            domicilioTextBox.Clear();
+            localidadTextBox.Clear();
+            telefonoTextBox.Clear();
+            ocupacionTextBox.Clear();
+            obraSocialTextBox.Clear();
+            alfabetaCheckBox.ResetText();
+            estudiosTextBox.Clear();
+            estadoCivilTextBox.Clear();
+
+            dniTextBox.Enabled = false;
+            apellidoSolteraTextBox.Enabled = false;
+            nombresTextBox.Enabled = false;
+            nacionalidadTextBox.Enabled = false;
+            fechaNacimientoDateTimePicker.Enabled = false;
+            domicilioTextBox.Enabled = false;
+            localidadTextBox.Enabled = false;
+            telefonoTextBox.Enabled = false;
+            ocupacionTextBox.Enabled = false;
+            obraSocialTextBox.Enabled = false;
+            alfabetaCheckBox.Enabled = false;
+            estudiosTextBox.Enabled = false;
+            estadoCivilTextBox.Enabled = false;
         }
 
         private void btn_eliminarMedico_Click(object sender, EventArgs e)
@@ -756,7 +895,10 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Médico Eliminada");
-                    RellenarDataGridMedico();
+                    if (dataGridMedico.Rows.Count > 0)
+                    {
+                        RellenarDataGridMedico();
+                    }                    
                 }
             }
             catch (SqlException ex)
@@ -808,7 +950,10 @@ namespace Parcial_HClinica
                 {
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Consulta Eliminada");
-                    RellenarDataGridConsulta();
+                    if (dataGridConsulta.Rows.Count > 0)
+                    {
+                        RellenarDataGridConsulta();
+                    }                    
                 }
             }
             catch (SqlException ex)
@@ -839,7 +984,47 @@ namespace Parcial_HClinica
             taTextBox.Enabled = false;
             btn_eliminarConsulta.Enabled = false;
             btn_modificarConsulta.Enabled = false;
-        }               
+        }
+
+        private void dataGridPaciente_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btn_modificarPaciente.Enabled = true;
+            btn_eliminarPaciente.Enabled = true;
+            btn_altaPaciente.Enabled = false;
+
+            dniTextBox.Enabled = true;
+            apellidoSolteraTextBox.Enabled = true;
+            nombresTextBox.Enabled = true;
+            nacionalidadTextBox.Enabled = true;
+            fechaNacimientoDateTimePicker.Enabled = true;
+            domicilioTextBox.Enabled = true;
+            localidadTextBox.Enabled = true;
+            telefonoTextBox.Enabled = true;
+            ocupacionTextBox.Enabled = true;
+            obraSocialTextBox.Enabled = true;
+            alfabetaCheckBox.Enabled = true;
+            estudiosTextBox.Enabled = true;
+            estadoCivilTextBox.Enabled = true;
+
+            DataGridViewRow row = (DataGridViewRow)dataGridPaciente.Rows[e.RowIndex];
+            if (row.Index != null)
+            {
+                idPacienteTextBox.Text = Convert.ToString(row.Cells[0].Value);
+                dniTextBox.Text = row.Cells[1].Value.ToString();
+                apellidoSolteraTextBox.Text = row.Cells[2].Value.ToString();
+                nombresTextBox.Text = row.Cells[3].Value.ToString();
+                nacionalidadTextBox.Text = row.Cells[4].Value.ToString();
+                fechaNacimientoDateTimePicker.Text = row.Cells[5].Value.ToString();
+                domicilioTextBox.Text = row.Cells[6].Value.ToString();
+                localidadTextBox.Text = row.Cells[7].Value.ToString();
+                telefonoTextBox.Text = row.Cells[8].Value.ToString();
+                ocupacionTextBox.Text = row.Cells[9].Value.ToString();
+                obraSocialTextBox.Text = row.Cells[10].Value.ToString();
+                alfabetaCheckBox.Checked = Convert.ToBoolean(row.Cells[11].Value);
+                estudiosTextBox.Text = row.Cells[12].Value.ToString();
+                estadoCivilTextBox.Text = row.Cells[13].Value.ToString();
+            }
+        }
 
         private void dataGridMedico_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -975,6 +1160,8 @@ namespace Parcial_HClinica
             pesoTextBox.Enabled = true;
             tallaTextBox.Enabled = true;
             taTextBox.Enabled = true;
-        }      
+        }
+
+        
     }
 }
